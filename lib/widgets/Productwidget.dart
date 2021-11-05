@@ -68,13 +68,22 @@ class ProductTile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(product.title,
-                            style: Style.display3.copyWith(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
+                        AutoSizeText(
+                          product.title,
+                          // softWrap: true,
+                          // wrapWords: true,
+                          maxLines: 1, overflow: TextOverflow.ellipsis,
+
+                          style: Style.display3.copyWith(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                          maxFontSize: 20,
+                          minFontSize: 20,
+                        ),
                         AutoSizeText("Category: ${product.category}",
                             style: Style.display1.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey)),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
